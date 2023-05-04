@@ -1,0 +1,29 @@
+<html lang="en"
+      xmlns:="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/main.html">
+<div layout:fragment="content">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">SURNAME</th>
+                    <th scope="col">EXAM</th>
+                    <th scope="col">MARK</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="student: ${students}">
+                    <th scope="row" th:text="${student.getId()}"></th>
+                    <td th:text="${student.getName()}"></td>
+                    <td th:text="${student.getSurname()}"></td>
+                    <td th:text="${student.getExam()}"></td>
+                    <td th:if="${student.getMark().equals('F')}" th:text="${student.getMark()}" style="color: red"></td>
+                    <td th:unless="${student.getMark().equals('F')}" th:text="${student.getMark()}"></td>
+                </tr>
+                </tbody>
+            </table>
+</div>
+</html>

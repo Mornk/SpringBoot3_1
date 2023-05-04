@@ -1,0 +1,50 @@
+<html lang="en"
+      xmlns:="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/main.html">
+<div layout:fragment="content">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <form th:action="@{'/addStudent'}" method="post">
+        <div class="row">
+          <div class="col-12">
+            <label>NAME:</label>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-12">
+            <input type="text" name="student_name" class="form-control" placeholder="Insert name:">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <label>SURNAME:</label>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-12">
+            <input type="text" name="surname" class="form-control" placeholder="Insert surname:">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <label>EXAM:</label>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-12">
+            <input type="number" name="exam" class="form-control" placeholder="Insert exam:">
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12">
+            <button class="btn btn-success">ADD STUDENT</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</html>
